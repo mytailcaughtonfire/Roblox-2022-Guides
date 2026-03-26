@@ -6,3 +6,4 @@ This is only about patches and stuff, I didn't include additions I made to my fo
 1. Domain Redirect
 2. Trust Check
 3. Login
+4. TLS Verification
