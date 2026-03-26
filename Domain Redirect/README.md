@@ -10,6 +10,6 @@ To temporarily bypass SSL:
 ``<BaseUrl>https://localhost:2005</BaseUrl>``
 
 Though, the v535 binary from Jetray had:
-``<BaseUrl>https://rbolock.tk:2005</BaseUrl>``
+``<BaseUrl>https://rbolock.tk:2005</BaseUrl>`` It's what I changed to after realizing.
 
 Worth noting that RFD does edit AppSettings.xml to change it to localhost.
