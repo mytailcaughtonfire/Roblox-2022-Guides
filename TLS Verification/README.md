@@ -1,5 +1,9 @@
 This is essentially just a rewording of **VisualPlugin's Guide [here](https://github.com/Windows81/Roblox-Freedom-Distribution-Guides/tree/f386f1f9afc92303db548bb6ad6ce18196eaee7d/PatchTLSVerification)**
 
+### Versions Patched:
+- 0.548 Studio
+- 0.554 Studio
+
 ## whar?
 VisualPlugin gave us this quick guide:
 
@@ -64,3 +68,34 @@ On the third callstack, we get this, which is what we're looking for:
 
 Again, we can take the same shortcut VisualPlugin took for ``VERIFYHOST``:
 ![e](x64dbg_r5c8xgfd8T.gif)
+
+Finally, patch the file and save it.
+
+## 0.554 Studio
+Searching for ``CURLOPT_SSL_VERIFYHOST``, we find two results:
+![alt text](image-3.png)
+For both of these results, we set breakpoints on 2 calls above, just to see.
+
+After running, the second breakpoint is hit with the callstack we're looking for, rdx being ``rdx 51`` and ``r8 2``
+I took the same shortcut I took for ``0.548``, chaning the lea to ``xor r8d, r8d`` and then ``nop``
+
+Next, we search for ``CURLOPT_SSL_VERIFYPEER``. 
+
+Again, two results. Wow, they really amped up their security! Oh geez...
+For both of these results, we set breakpoints on 2 calls above, like before.
+![alt text](image-4.png)
+
+The second breakpoint is hit again, with the callstack we're looking for:
+```
+1: rcx 000001D4EFE04050 000001D4EFE04050
+2: rdx 0000000000000040 0000000000000040
+3: r8 0000000000000001 0000000000000001
+4: r9 0000000000000001 0000000000000001
+5: [rsp+20] 000001D4EFF43400 000001D4EFF43400 "https://apis.rbolock.tk:2005/oauth/.well-known/openid-configuration"
+```
+Interestingly, our OAuth login showed up too. Kewl.
+
+Likewise, same shortcut as before. Here's a gif to please your eyes:
+![e](x64dbg_9QUUWYxL4L.gif)
+
+Finally, patch the file and save it.
