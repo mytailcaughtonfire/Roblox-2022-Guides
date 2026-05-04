@@ -3,7 +3,7 @@
 ## DataModelPatch.rbxm
 Patching DataModelPatch.rbxm lets you patch, modify, and run CoreScripts/CoreGuis and change just about anything. Even use exclusive services meant for ROBLOX admins (such as HttpRbxApiService, RobloxReplicatedStorage)
 
-**A prepatch is included but the offsets _may be wrong_, the patch was made on Jetray's RobloxStudioBeta v535, that has local_rcc pre-patched inside of it.**
+**Two prepatches are included but the offsets _may be wrong_, the server patch was made on Jetray's RobloxStudioBeta v535, that has local_rcc pre-patched inside of it, the other is for the original v535 Studio binary. I recommend you do it yourself first!**
 
 ### Versions Patched:
 - 0.535 Studio
@@ -29,9 +29,10 @@ To ensure accuracy, you can modify DataModelPatch.rbxm by swapping the .rbxm wit
 An ``if statement`` checks if the patch is verifiable. If we want to apply our custom DataModelPatch, we need to make sure this statement returns true, or have this check skipped.
 ![alt text](image-1.png)
 
-
-
 ## 0.535 Studio
+
+**Video included! At the bottom of the page.**
+
 Using RFD, I ran ``python .\_main.py studio --web_port 2005 --config_path .\GameConfig.toml --debug``
 - Prior to this, I changed the ``x96dbg`` directly where ``x96dbg`` is located, adding to PATH wasn't working. The code is located in ``Source\routines\_logic.py``
 
@@ -88,3 +89,6 @@ mov
 ```
 Replace the je with nop until theres 6 nops
 ![alt text](image-3.png)
+
+### Video:
+https://github.com/user-attachments/assets/325f39bd-11ce-4192-bc10-1c1281019231
