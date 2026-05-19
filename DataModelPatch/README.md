@@ -3,7 +3,7 @@
 ## DataModelPatch.rbxm
 Patching DataModelPatch.rbxm lets you patch, modify, and run CoreScripts/CoreGuis and change just about anything. Even use exclusive services meant for ROBLOX admins (such as HttpRbxApiService, RobloxReplicatedStorage)
 
-**Two prepatches are included but the offsets _may be wrong_, the server patch was made on Jetray's RobloxStudioBeta v535, that has local_rcc pre-patched inside of it, the other is for the original v535 Studio binary. I recommend you do it yourself first!**
+**Two prepatches are included but the offsets _may be wrong_, the server patch was made on Ktrain's RobloxStudioBeta v535, that has local_rcc pre-patched inside of it, the other is for the original v535 Studio binary. I recommend you do it yourself first!**
 
 ### Versions Patched:
 - 0.535 Studio
